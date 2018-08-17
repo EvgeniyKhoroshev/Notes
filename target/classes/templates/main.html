@@ -5,6 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, mf its main!'" />
+    <div th:each="nt: ${notes}">Список заметок
+        <b th:text="${nt.id}"></b>
+        <span th:text="${nt.tag}"></span>
+        <span th:text="${nt.text}"></span>
+
+    </div>
 </body>
 </html>
