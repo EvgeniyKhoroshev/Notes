@@ -14,6 +14,13 @@ public class Note {
     private String text;
     private String tag;
 
+    public Note() { }
+
+    public Note(String text, String tag) {
+        this.text = text;
+        this.tag = tag;
+    }
+
     public String getText() {
         return text;
     }
