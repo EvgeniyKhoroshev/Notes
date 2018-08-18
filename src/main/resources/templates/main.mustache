@@ -11,15 +11,17 @@
             <input type="text" name="text" placeholder="Введите заметку.">
             <button type="submit">Добавить</button>
         </form>
+        <b>Список заметок</b>
+    <b>ID </b>
+    <span>Tag :</span>
+    <span>Text :</span>
+    {{#notes}}
+        <div class="note_out" >
+            <b>{{id}}</b>
+            <span>{{tag}}</span>
+            <span>{{text}}</span>
+        </div>
+    {{/notes}}
     </div>
-
-{{#notes}}
-    <div align="centre">
-        Список заметок
-            <b>ID {{id}}</b>
-            <span>Name {{tag}}</span>
-            <span>Text {{text}}</span>
-    </div>
-{{/notes}}
 </body>
 </html>
