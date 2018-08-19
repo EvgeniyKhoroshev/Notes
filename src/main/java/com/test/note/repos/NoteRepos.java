@@ -11,4 +11,7 @@ public interface NoteRepos extends CrudRepository<Note, Long>
 {
     @Query(value = "select * from note where tag like :tag_or_text or text like :tag_or_text", nativeQuery = true)
     List<Note> findByTagOrText(@Param("tag_or_text") String tag_or_text);
+    @Query(value = "select * from note where id = :id", nativeQuery = true)
+    Note findByID(@Param("id") Integer id);
+
 }

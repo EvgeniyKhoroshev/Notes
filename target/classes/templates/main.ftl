@@ -1,19 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>sgfgggggggggggggggg</title>
-    <style></style>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../templates/styles/application.css" />
-<body>
+<#import "parts/common.ftl" as comm>
+<@comm.page>
     <div class="main_body">
-        <form method="post">
+        <form method="post" action="/main">
             <input type="text" name="tag" placeholder="Введите название заметки.">
             <input type="text" name="text" placeholder="Введите заметку.">
             <button type="submit">Добавить</button>
+            <br>
         </form>
         <b>Список заметок</b>
-        <form method="post" action="filter">
+        <form method="get" action="/main">
             <p>Фильтр</p>
             <input type="text" name="filter_text">
             <button type="submit">Поиск</button>
@@ -21,16 +16,14 @@
         <br>
         <b>Список заметок:</b>
         <br>
-    {{#notes}}
+    <#list notes as nt>
         <form class="output">
-            <ul>
-                <li> <a class="approoved_post">{{id}}  {{text}} </a></li>
-            </ul>
-<!--            <input type="text" value="{{tag}}">
-            <br/>
-            <textarea class="text">{{text}}</textarea>-->
+                <ul>
+                    <li> ${nt.id} <#if nt.tag!=""><a href="/note?id=${nt.id}" class="approoved_post">${nt.tag}<#else><a href="/note?id=${nt.id}" class="not_approoved_post">${nt.text}</#if></a></li>
+                </ul>
         </form>
-    {{/notes}}
+    <#else>
+    Пока нет ни одной заметки.
+    </#list>
     </div>
-</body>
-</html>
+</@comm.page>
