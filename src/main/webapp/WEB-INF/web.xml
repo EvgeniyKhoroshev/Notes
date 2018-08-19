@@ -1,0 +1,26 @@
+<display-name>Spring3MVC</display-name>
+<welcome-file-list>
+<welcome-file>main.tfl</welcome-file>
+</welcome-file-list>
+<context-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>/webapp/WEB-INF/spring-servlet.xml</param-value>
+</context-param>
+<listener>
+<listener-class> org.springframework.web.context.ContextLoaderListener </listener-class>
+</listener>
+<servlet>
+<servlet-name>spring</servlet-name>
+<servlet-class>
+    org.springframework.web.servlet.DispatcherServlet
+</servlet-class>
+<load-on-startup>2</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>spring</servlet-name>
+<url-pattern>*.tfl</url-pattern>
+<url-pattern>*.html</url-pattern>
+<url-pattern>/resources/templates/</url-pattern>
+<url-pattern>*.htm</url-pattern>
+</servlet-mapping>
+        </web-app>

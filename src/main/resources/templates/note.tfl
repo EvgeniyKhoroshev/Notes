@@ -3,8 +3,8 @@
     <div>
         <ul>
             <li>ID :${note.id}</li>
-            <li>Название заметки :${note.id}</li> <br>
-            <li>Текст :${note.id}</li>
+            <li>Название заметки :${note.tag}</li> <br>
+            <li>Текст : ${note.text}</li>
         </ul>
     </div>
 <#/comm.page>
