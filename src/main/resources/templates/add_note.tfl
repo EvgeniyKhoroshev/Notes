@@ -1,0 +1,10 @@
+<#import "parts/common.ftl" as comm>
+<@comm.page>
+    <div>
+        <ul>
+            <li>ID :${note.id}</li>
+            <li>Название заметки :${note.id}</li> <br>
+            <li>Текст :${note.id}</li>
+        </ul>
+    </div>
+<#/comm.page>

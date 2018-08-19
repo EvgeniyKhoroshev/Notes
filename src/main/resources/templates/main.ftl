@@ -2,18 +2,16 @@
 <html>
 <head>
     <title>sgfgggggggggggggggg</title>
-    <style></style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../templates/styles/application.css" />
 <body>
     <div class="main_body">
-        <form method="post">
+        <form method="post" action="/main">
             <input type="text" name="tag" placeholder="Введите название заметки.">
             <input type="text" name="text" placeholder="Введите заметку.">
             <button type="submit">Добавить</button>
         </form>
         <b>Список заметок</b>
-        <form method="post" action="filter">
+        <form method="post" action="/filter">
             <p>Фильтр</p>
             <input type="text" name="filter_text">
             <button type="submit">Поиск</button>
@@ -24,11 +22,8 @@
     {{#notes}}
         <form class="output">
             <ul>
-                <li> <a class="approoved_post">{{id}}  {{text}} </a></li>
+                <li> <a class="approoved_post">{{id}} </a></li>
             </ul>
-<!--            <input type="text" value="{{tag}}">
-            <br/>
-            <textarea class="text">{{text}}</textarea>-->
         </form>
     {{/notes}}
     </div>
