@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,18 +22,27 @@ public class NoteController {
     }
 
     @RequestMapping("/add_note")
-    public String add_note(Model model)
+    public String show_add_note()
     {
-        String report;
-//        if (text != "")
-//        { @RequestParam String tag, @RequestParam String text,
-//            Note note = new Note(text,tag);
-//            nRepos.save(note);
-//            report = "Заметка успешно добавлена.";
-//        }
-//        else
-//            report = "Введите текст заметки.";
-//        model.addAttribute("report", report);
         return "add_note";
     }
+    @PostMapping("/add_note")
+    public String add_note(@RequestParam String tag, @RequestParam String text, Model model)
+    {
+        String report;
+        if (text != "")
+        {
+            Note note = new Note(text,tag);
+            nRepos.save(note);
+            model.addAttribute("note",  note);
+            String buf = "/note?id=" + note.getId().toString();
+            return "redirect:"+buf;
+        }
+        else
+            report = "Введите текст заметки.";
+        model.addAttribute("report", report);
+        return "add_note";
+    }
+
+
 }

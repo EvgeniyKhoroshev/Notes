@@ -11,11 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
     public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/resources/templates/add_note.tfl").setViewName("add_note");
-        registry.addViewController("../note").setViewName("note");
+        registry.addViewController("/resources/templates/add_note").setViewName("add_note");
+        registry.addViewController("/note").setViewName("note");
     }
     @Override
     public void configureViewResolvers(final ViewResolverRegistry registry) {
-        registry.jsp("/resources/templates/", ".tfl");
+        registry.jsp("/resources/templates/", ".jsp");
     }
 }
