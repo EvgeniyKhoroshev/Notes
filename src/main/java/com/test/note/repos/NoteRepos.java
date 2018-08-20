@@ -16,5 +16,6 @@ public interface NoteRepos extends CrudRepository<Note, Long>
     @Query(value = "update note set tag = :tag, text = :text where id = :id; " +
             "select * from note where id = :id", nativeQuery = true)
     Note nativeUpdate(@Param("id")Integer id,@Param("tag") String tag,@Param("text") String text);
-
+    @Query(value = "delete from note where id = :id", nativeQuery = true)
+    void deleteByID(@Param("id")Integer id);
 }

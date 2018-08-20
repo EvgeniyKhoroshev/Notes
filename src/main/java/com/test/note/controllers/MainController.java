@@ -5,10 +5,7 @@ import com.test.note.repos.NoteRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -16,8 +13,17 @@ public class MainController {
     @Autowired
     private NoteRepos nRepos;
 
+    @RequestMapping(params = "delete",value = "/main", method = RequestMethod.POST)
+    public String delete_note(@RequestParam Integer id)
+    {
+        Note note = nRepos.findByID(id);
+        nRepos.delete(note);
+        return "redirect:main";
+    }
+
+
     @RequestMapping("")
-    public String main_page(Model model)
+    public String main_page()
     {
         return "redirect:main";
     }

@@ -5,12 +5,7 @@ import com.test.note.repos.NoteRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.jws.WebParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class NoteController {
@@ -23,11 +18,17 @@ public class NoteController {
         model.addAttribute("note", note);
         return "note";
     }
-    @PostMapping("/note")
-            public String update_note(
-                                        @RequestParam(required = false) Integer id,
-                                          @RequestParam(required = false) String tag,
-                                              @RequestParam(required = false) String text, Model model)
+    @RequestMapping(params = "delete",value = "/note", method = RequestMethod.POST)
+    public String delete_note(@RequestParam Integer id, Model model)
+    {
+        Note note = nRepos.findByID(id);
+        nRepos.delete(note);
+        return "redirect:main";
+    }
+    @PostMapping(value = "/note", params = "update")
+    public String update_note(@RequestParam(required = false) Integer id,
+                              @RequestParam(required = false) String tag,
+                              @RequestParam(required = false) String text, Model model)
     {
         String report = "Изменения сохранены.";
         Note note = nRepos.findByID(id);

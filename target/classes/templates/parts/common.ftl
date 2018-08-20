@@ -46,9 +46,14 @@
         <b>Список заметок:</b>
         <br>
         <#list notes as nt>
-        <form class="output">
+        <form class="output" method="post">
             <ul>
-                <li> ${nt.id} <#if nt.tag!=""><a href="/note?id=${nt.id}" class="approoved_post">${nt.tag}<#else><a href="/note?id=${nt.id}" class="not_approoved_post">${nt.text}</#if></a></li>
+                <li> ${nt.id}
+                    <#if nt.tag!=""><a href="/note?id=${nt.id}" class="approoved_post">${nt.tag}
+                    <#else><a href="/note?id=${nt.id}" class="not_approoved_post">${nt.text}</#if></a>
+                    <input type="hidden" name="id" value="${nt.id}"/>
+                    <button type="submit" name="delete" onclick="return confirm('are u shure?')">Удалить</button>
+                </li>
             </ul>
         </form>
         <#else>
@@ -61,14 +66,15 @@
 <#macro show_note>
     <div class="single_note">
         <form method="post">
-            <input type="hidden" name="id" value="${note.id}">
+            <input type="hidden" name="id" value="${note.id}"/>
             <p>Название заметки №${note.id}: </p>
             <input name="tag" value="${note.tag}"/>
             <br>
             <p>Текст заметки : </p>
             <textarea name="text">${note.text}</textarea>
             <br>
-            <button type="submit">Сохранить изменения</button>
+            <button type="submit" name="update">Сохранить изменения</button>
+            <button type="submit" name="delete" onclick="return confirm('are u shure?')">Удалить</button>
         </form>
         <#if report?has_content>
         <b>${report}</b>
