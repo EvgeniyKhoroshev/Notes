@@ -29,15 +29,19 @@
 </#macro>
 
 <#macro note_list>
-    <div class="main_body">
-        <a href="/add_note">Добавить заметку</a>
-        <br>
-        <b>Список заметок</b>
-        <form method="get" action="/main">
+    <div class="navigation">
+        <form method="get">
             <p>Фильтр</p>
             <input type="text" name="filter_text">
             <button type="submit">Поиск</button>
         </form>
+    </div>
+    <div class="main_body">
+        <a href="/add_note">Добавить заметку</a>
+        <br>
+        <#if report?has_content>
+        <b>${report}</b>
+        </#if>
         <br>
         <b>Список заметок:</b>
         <br>
@@ -52,16 +56,24 @@
     </#list>
     </div>
 </#macro>
+
+
 <#macro show_note>
     <div class="single_note">
-        <form method="post" action="save_changes">
+        <form method="post">
+            <input type="hidden" name="id" value="${note.id}">
+            <p>Название заметки №${note.id}: </p>
             <input name="tag" value="${note.tag}"/>
             <br>
+            <p>Текст заметки : </p>
             <textarea name="text">${note.text}</textarea>
             <br>
             <button type="submit">Сохранить изменения</button>
-        <!--<>Название заметки :${note.tag}</> <br>-->
-            <!--<li>Текст : ${note.text}</li>-->
         </form>
+        <#if report?has_content>
+        <b>${report}</b>
+        </#if>
+        <br>
+        <a href="/main">Перейти на главную</a>
     </div>
 </#macro>
