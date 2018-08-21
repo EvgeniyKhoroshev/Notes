@@ -7,6 +7,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/theme1/css/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/theme1/css/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/test/note/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/test/note/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/theme1/css/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/theme1/css/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/theme1/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/theme1/js/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+            <state relative-caret-position="123">
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -80,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="js.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="js.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="17">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -171,8 +175,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/add_note.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/static/theme1/css/application.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/note/controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js" />
       </list>
     </option>
   </component>
@@ -517,12 +521,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5080527" side_tool="true" weight="0.21621622" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.38213763" visible="true" weight="0.33663365" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49319214" weight="0.31023103" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.38213763" weight="0.33663365" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49319214" visible="true" weight="0.31023103" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6268657" visible="true" weight="0.23373677" />
-      <window_info id="Structure" order="1" sideWeight="0.37313432" side_tool="true" visible="true" weight="0.23373677" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6267943" visible="true" weight="0.23373677" />
+      <window_info id="Structure" order="1" sideWeight="0.37320575" side_tool="true" visible="true" weight="0.23373677" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -844,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/add_note.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -879,8 +876,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+        <state relative-caret-position="123">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/theme1/js/js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
