@@ -13,6 +13,11 @@ public class MainController {
     @Autowired
     private NoteRepos nRepos;
 
+    @PostMapping(value = "/main", params = "show")
+    public String show_selected_note(@RequestParam Integer id)
+    {
+        return "redirect:/note?id="+id.toString();
+    }
     @RequestMapping(params = "delete",value = "/main", method = RequestMethod.POST)
     public String delete_note(@RequestParam Integer id)
     {
@@ -48,14 +53,18 @@ public class MainController {
     @PostMapping("/main")
     public String add(@RequestParam String tag, @RequestParam String text, Model model)
     {
-        Boolean error = false;
+        Iterable<Note> notes;
         if (text == "")
-            error = true;
+        {
+            model.addAttribute("report","Введите текст заметки.");
+        }
         else {
+            model.addAttribute("report","Заметка добавлена.");
             Note note = new Note(text, tag);
             nRepos.save(note);
         }
-            Iterable<Note> notes = nRepos.findAll();
+
+        notes = nRepos.findAll();
         model.addAttribute("notes", notes);
 
         return "main";
