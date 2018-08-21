@@ -48,14 +48,16 @@ public class MainController {
     @PostMapping("/main")
     public String add(@RequestParam String tag, @RequestParam String text, Model model)
     {
-        Boolean error = false;
+        Iterable<Note> notes = nRepos.findAll();
         if (text == "")
-            error = true;
+        {
+            model.addAttribute("report","Введите текст заметки.");
+        }
         else {
+            model.addAttribute("report","Заметка добавлена.");
             Note note = new Note(text, tag);
             nRepos.save(note);
         }
-            Iterable<Note> notes = nRepos.findAll();
         model.addAttribute("notes", notes);
 
         return "main";
